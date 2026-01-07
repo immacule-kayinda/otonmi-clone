@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-red-500"></div>
-              <h3 className="font-bold tracking-widest text-otonmi-light">
+              <h3 className="font-bold tracking-widest text-otonmi-light font-mono">
                 OTONMI
               </h3>
             </div>
@@ -25,13 +25,19 @@ export default function Footer() {
 
         <div className="flex gap-12 text-sm text-otonmi-gray justify-between col-span-5">
           {fields.map((field) => (
-            <div className="flex flex-col gap-2 uppercase">
-              <span className="font-bold text-otonmi-light mb-10">{field}</span>
-              {links.map((link) => (
-                <Link href="#" className="hover:text-otonmi-red">
-                  {link}
-                </Link>
-              ))}
+            <div key={field} className="flex flex-col gap-4 uppercase">
+              <span className="font-bold text-otonmi-light">{field}</span>
+              <div className="flex gap-2 flex-col">
+                {links.map((link) => (
+                  <Link
+                    href="#"
+                    key={link}
+                    className="hover:text-otonmi-red text-xs transition-colors duration-300"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
           ))}
         </div>
