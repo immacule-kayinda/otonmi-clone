@@ -45,7 +45,7 @@ export default function VectorGrid() {
               key={vec.id}
               className="bg-otonmi-black p-8 group hover:bg-otonmi-frame transition-colors cursor-default relative overflow-hidden"
             >
-              <span className="text-xs font-mono text-otonmi-gray/50 mb-6 block">
+              <span className="text-[10px] font-mono text-otonmi-gray/50 mb-6 block">
                 VECTOR // {vec.id}
               </span>
               <h3

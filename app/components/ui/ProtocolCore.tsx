@@ -1,4 +1,15 @@
-import { AlertOctagon, Box, Github, Key, Zap } from "lucide-react";
+import {
+  AlertOctagon,
+  Box,
+  ChartBar,
+  ChartBarStackedIcon,
+  ChartColumnBig,
+  Cpu,
+  Github,
+  Key,
+  Settings,
+  Zap,
+} from "lucide-react";
 import SectionBadge from "./SectionBadge";
 import ActionButton from "./ActionButton";
 
@@ -41,19 +52,19 @@ const elements: {
   },
   {
     title: "CONFIGURATIONS",
-    icon: <AlertOctagon className="w-4 h-4" />,
+    icon: <Settings className="w-4 h-4" />,
     description:
       "Detect misconfigured repository settings and branch protection failures.",
   },
   {
     title: "THREAT SCORING",
-    icon: <AlertOctagon className="w-4 h-4" />,
+    icon: <ChartColumnBig className="w-4 h-4" />,
     description:
       "Dynamic risk assessments based on severity, exploitability, and exposure level.",
   },
   {
     title: "AUTONOMOUS",
-    icon: <AlertOctagon className="w-4 h-4" />,
+    icon: <Cpu className="w-4 h-4" />,
     description:
       "No manual rule-setting required. Our auditor reasons through findings automatically.",
   },
@@ -96,12 +107,15 @@ export default function ProtocolCore() {
       </div>
       <div className="grid grid-cols-2 col-span-7 divide-otonmi-border divide-x divide-y">
         {elements.map((el) => (
-          <div className="p-8 gap-y-4 flex flex-col">
-            <div className="w-12 h-12 flex items-center justify-center border rounded-lg border-otonmi-border">
+          <div className="p-8 gap-y-4 flex flex-col group relative hover:bg-red-950/10 transition-colors duration-300">
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-otonmi-red scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            <div className="w-12 h-12 flex items-center group-hover:text-red-800 justify-center border rounded-lg border-otonmi-border group-hover:border-red-800 transition-colors duration-300">
               {el.icon}
             </div>
-            <div className="uppercase font-bold text-2xl">{el.title}</div>
-            <div className="text-neutral-600 uppercase">{el.description}</div>
+            <div className="uppercase font-bold text-2xl ">{el.title}</div>
+            <div className="text-neutral-600 uppercase transition-colors">
+              {el.description}
+            </div>
           </div>
         ))}
       </div>

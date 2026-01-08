@@ -32,7 +32,7 @@ export default function Footer() {
                   <Link
                     href="#"
                     key={link}
-                    className="hover:text-otonmi-red text-xs transition-colors duration-300"
+                    className="hover:text-otonmi-red text-[10px] transition-colors duration-300"
                   >
                     {link}
                   </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-otonmi-border/50 flex justify-between items-center text-xs text-otonmi-gray w-full uppercase font-mono">
+      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-otonmi-border/50 flex justify-between items-center text-[10px] text-otonmi-gray w-full uppercase font-mono">
         <p>© 2026 Otonmi Inc. Codebase Secured.</p>
         <div className="flex gap-4">
           <Link href="#" className="hover:text-otonmi-light transition-colors">

@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, Flashlight, Info, Play, ShieldAlert } from "lucide-react";
+import {
+  ArrowRight,
+  Flashlight,
+  Info,
+  Play,
+  ShieldAlert,
+  Zap,
+} from "lucide-react";
 import Decorations from "./Decorations";
 import Image from "next/image";
 import clsx from "clsx";
@@ -31,7 +38,7 @@ export default function Hero() {
     <section className="flex items-center">
       <div className="mx-auto w-full grid grid-cols-1 lg:grid-cols-9 items-center divide-x divide-otonmi-border">
         {/* Left Content */}
-        <div className="col-span-4 px-12">
+        <div className="col-span-4 px-12 h-full">
           <div className="py-12">
             {/* Badge */}
             <div className="inline-flex items-center gap-3 px-3 py-1.5 border border-otonmi-border bg-otonmi-frame/50 mb-8 max-w-fit">
@@ -59,13 +66,13 @@ export default function Hero() {
                 <input
                   type="text"
                   placeholder="GITHUB REPOSITORY URL"
-                  className="w-full bg-transparent border border-otonmi-border p-4 text-xs font-mono tracking-widest text-otonmi-light placeholder:text-otonmi-gray/30 focus:outline-none focus:border-otonmi-red transition-colors"
+                  className="w-full bg-transparent border border-otonmi-border p-4 text-[10px] font-mono tracking-widest text-otonmi-light placeholder:text-otonmi-gray/30 focus:outline-none focus:border-otonmi-red transition-colors"
                 />
               </div>
 
               <Link
                 href="/dashboard"
-                className="group inline-flex items-center gap-4 px-8 py-4 bg-transparent border border-otonmi-border text-otonmi-light text-xs font-bold tracking-[0.2em] hover:bg-otonmi-light hover:text-otonmi-black transition-all"
+                className="group inline-flex items-center gap-4 px-8 py-4 bg-transparent border border-otonmi-border text-otonmi-light text-[10px] font-bold tracking-[0.2em] hover:bg-otonmi-light hover:text-otonmi-black transition-all"
               >
                 START AUDIT
                 <ArrowRight
@@ -82,8 +89,8 @@ export default function Hero() {
         </div>
 
         {/* Right Content - Visual */}
-        <div className="h-full col-span-5 grid grid-cols-5 overflow-hidden divide-x divide-otonmi-border">
-          <div className="col-span-3 flex flex-col">
+        <div className="h-full col-span-5 grid grid-cols-2 overflow-hidden divide-x divide-otonmi-border">
+          <div className="flex flex-col">
             <div className="relative w-full">
               <div className="absolute top-0 right-0 flex justify-end p-3 w-full z-30">
                 <div className="w-10 h-10 border border-otonmi-border rounded-full flex items-center justify-center text-otonmi-light hover:bg-otonmi-white/10 cursor-pointer">
@@ -107,8 +114,8 @@ export default function Hero() {
               />
             </div>
 
-            <div className="px-8 py-12 gap-y-8 grid">
-              <div className="flex items-end justify-between">
+            <div className="px-8 gap-y-8 grid h-full p-6 bg-neutral-950">
+              <div className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <div className="w-2 h-2 bg-otonmi-red" />
                   <div className="w-2 h-2 bg-otonmi-gray/30" />
@@ -122,19 +129,19 @@ export default function Hero() {
                   <span className="text-6xl font-bold">100</span>
                   <span className="text-lg text-neutral-600">%</span>
                 </div>
-                <span className="font-light uppercase font-mono text-neutral-700">
+                <span className="font-light uppercase text-[10px] font-mono text-neutral-500">
                   audit integrity
                 </span>
               </div>
-              <div className="grid gap-5">
-                <div className="h-0.5 w-full bg-otonmi-red/20 mb-1" />
+              <div className="grid gap-3">
+                <div className="h-px w-full bg-red-500" />
                 <div className="flex justify-between">
                   {["secrets", "deps", "config", "auth"].map((name, index) => (
                     <span
                       key={index}
                       className={clsx(
-                        "font-mono font-light text-[12px] ",
-                        index === 2 ? "text-neutral-200" : "text-neutral-600"
+                        "font-mono font-light text-[10px]",
+                        index === 2 ? "text-neutral-100" : "text-neutral-500"
                       )}
                     >
                       {name.toUpperCase()}
@@ -145,18 +152,22 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hidden xl:block col-span-2">
-            {decorations.map((deco) => (
-              <Decorations key={deco.name} {...deco} />
+          <div className="flex flex-col divide-y divide-otonmi-border">
+            {decorations.map((deco, index) => (
+              <Decorations key={index} {...deco} />
             ))}
-            <div className="text-right">
-              <span className="block text-[10px] font-mono text-otonmi-gray mb-1 uppercase">
+            <div className="text-left p-12">
+              <span className="block text-[10px] font-mono font-light text-otonmi-gray mb-1 uppercase">
                 zero config required
               </span>
-              <h3 className="text-2xl font-bold text-otonmi-light uppercase">
-                Initialize
-              </h3>
-              <Flashlight />
+              <div>
+                <h3 className="text-3xl font-bold text-otonmi-light uppercase">
+                  Initialize
+                </h3>
+                <span className="text-[10px] font-mono font-light text-otonmi-gray/50 uppercase">
+                  <Zap className="w-4 h-4 fill-current mt-1" />
+                </span>
+              </div>
             </div>
           </div>
         </div>

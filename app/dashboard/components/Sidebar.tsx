@@ -33,7 +33,7 @@ export default function Sidebar() {
 
         {/* Vectors */}
         <div>
-          <h3 className="text-xs font-mono text-otonmi-gray/50 mb-3 px-2">
+          <h3 className="text-[10px] font-mono text-otonmi-gray/50 mb-3 px-2">
             VECTORS
           </h3>
           <div className="flex flex-col gap-1">
@@ -45,7 +45,7 @@ export default function Sidebar() {
 
         {/* System */}
         <div>
-          <h3 className="text-xs font-mono text-otonmi-gray/50 mb-3 px-2">
+          <h3 className="text-[10px] font-mono text-otonmi-gray/50 mb-3 px-2">
             SYSTEM
           </h3>
           <div className="flex flex-col gap-1">
@@ -98,7 +98,7 @@ function NavItem({
         >
           {icon}
         </span>
-        <span className="text-xs font-bold tracking-wider">{label}</span>
+        <span className="text-[10px] font-bold tracking-wider">{label}</span>
       </div>
       {badge && (
         <span className="bg-otonmi-red text-otonmi-black text-[10px] font-bold px-1.5 py-0.5 rounded-sm">

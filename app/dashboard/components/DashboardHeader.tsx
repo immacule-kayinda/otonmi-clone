@@ -4,7 +4,7 @@ export default function DashboardHeader() {
   return (
     <header className="h-16 border-b border-otonmi-border bg-otonmi-black flex items-center justify-between px-8 sticky top-0 z-30">
       {/* Breadcrumbs */}
-      <div className="flex items-center text-xs font-mono tracking-wider">
+      <div className="flex items-center text-[10px] font-mono tracking-wider">
         <span className="text-otonmi-gray">REPOSITORIES</span>
         <span className="mx-2 text-otonmi-border">/</span>
         <span className="text-otonmi-light font-bold">AUDIT DASHBOARD</span>
@@ -18,7 +18,7 @@ export default function DashboardHeader() {
         <input
           type="text"
           placeholder="SEARCH THREAT VECTORS"
-          className="w-full bg-otonmi-frame border border-otonmi-border rounded-full py-2 pl-10 pr-4 text-xs font-mono text-otonmi-light focus:outline-none focus:border-otonmi-red focus:bg-otonmi-black transition-all placeholder:text-otonmi-gray/50"
+          className="w-full bg-otonmi-frame border border-otonmi-border rounded-full py-2 pl-10 pr-4 text-[10px] font-mono text-otonmi-light focus:outline-none focus:border-otonmi-red focus:bg-otonmi-black transition-all placeholder:text-otonmi-gray/50"
         />
       </div>
 

@@ -26,13 +26,17 @@ export default function RiskScore() {
 
       <div className="flex items-center justify-between p-4 border-b border-otonmi-border bg-otonmi-black/40">
         <div className="flex flex-col items-start">
-          <span className="text-xs font-mono text-otonmi-gray">TARGET:</span>
+          <span className="text-[10px] font-mono text-otonmi-gray">
+            TARGET:
+          </span>
           <span className="text-sm font-bold text-otonmi-light tracking-wide">
             REPO_MONITOR_V1
           </span>
         </div>
         <div className="flex flex-col items-end">
-          <span className="text-xs font-mono text-otonmi-gray">STATUS:</span>
+          <span className="text-[10px] font-mono text-otonmi-gray">
+            STATUS:
+          </span>
           <span className="text-sm font-bold text-green-500 tracking-wide animate-pulse">
             ACTIVE
           </span>
@@ -67,7 +71,7 @@ export default function RiskScore() {
             {score}
           </div>
         </div>
-        <span className="mt-4 text-xs font-mono text-otonmi-red">
+        <span className="mt-4 text-[10px] font-mono text-otonmi-red">
           RISK LEVEL: HIGH
         </span>
       </div>
